@@ -26,5 +26,12 @@ fun main() {
     )
 
     displayMenu()
-    readInput(kpiToCalculators)
+
+}
+fun displayMenu() {
+    println("Afficher les KPI:")
+    println("1. Le chiffre d’affaires par mois par année")
+    println("2. Le chiffre d’affaires par appareil")
+    println("3. Le panier moyen : Chiffre d’affaires / Commandes")
+    println()
 }
