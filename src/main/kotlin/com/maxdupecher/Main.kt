@@ -31,13 +31,13 @@ fun main() {
 
 fun displayMenu() {
     println("Afficher les KPI:")
-    println("1. Le chiffre d’affaires par mois par année")
-    println("2. Le chiffre d’affaires par appareil")
-    println("3. Le panier moyen : Chiffre d’affaires / Commandes")
-    println("4. Le coût par clic : Coût / Clics")
-    println("5. Le taux de clic : (Clics /impression) * 100")
-    println("6. Le ROI : CA Total / Coût ")
-    println("7. Le ROI segmenté par appareil et par mois (uniquement sur 2017)")
+    println("1. Le panier moyen : Chiffre d’affaires / Commandes")
+    println("2. Le coût par clic : Coût / Clics")
+    println("3. Le taux de clic : (Clics /impression) * 100")
+    println("4. Le ROI : CA Total / Coût")
+    println("5. Le ROI segmenté par appareil et par mois (uniquement sur 2017)")
+    println("6. Le chiffre d’affaires par appareil ")
+    println("7. Le chiffre d’affaires par mois par année")
     println("8. QUITTER")
     println()
 }
