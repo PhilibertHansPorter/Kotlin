@@ -26,8 +26,9 @@ fun main() {
     )
 
     displayMenu()
-
+    readInput(kpiToCalculators)
 }
+
 fun displayMenu() {
     println("Afficher les KPI:")
     println("1. Le chiffre d’affaires par mois par année")
@@ -35,5 +36,40 @@ fun displayMenu() {
     println("3. Le panier moyen : Chiffre d’affaires / Commandes")
     println("4. Le coût par clic : Coût / Clics")
     println("5. Le taux de clic : (Clics /impression) * 100")
+    println("6. Le ROI : CA Total / Coût ")
+    println("7. Le ROI segmenté par appareil et par mois (uniquement sur 2017)")
+    println("8. QUITTER")
     println()
+}
+
+fun readInput(kpiToCalculators: Map<KpiType, KpiCalculator>) {
+    val scanner = Scanner(System.`in`)
+
+    try {
+        do {
+            val number = scanner.nextInt()
+
+            if (number != 8) {
+                val type = KpiType.values()[number - 1]
+                kpiToCalculators[type]?.computeKpi()
+
+                clearScreen()
+                displayMenu()
+            }
+        } while (number != 8)
+
+        clearScreen()
+        println("Bye!")
+    } catch (e: Exception) {
+        readInput(kpiToCalculators)
+    }
+}
+
+fun clearScreen() {
+    val os = System.getProperty("os.name")
+    if (os.contains("Windows")) {
+        Runtime.getRuntime().exec("cls")
+    } else {
+        Runtime.getRuntime().exec("clear")
+    }
 }
